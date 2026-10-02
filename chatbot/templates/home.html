@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Assistant</title>
+</head>
+<body>
+
+    <h1>Ask AI</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <textarea name="question"
+                  rows="5"
+                  cols="50"
+                  placeholder="Ask anything..."></textarea>
+
+        <br><br>
+
+        <button type="submit">
+            Ask AI
+        </button>
+    </form>
+
+    {% if answer %}
+        <h2>Answer</h2>
+        <p>{{ answer }}</p>
+    {% endif %}
+
+</body>
+</html>
